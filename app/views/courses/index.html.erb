@@ -5,11 +5,12 @@
 </div>
 
 <div class="row">
+	<% Course.all.each do |course| %>
     <div class="col s6 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">CS11: Intro to Computer Science</span>
-          <p> A thorough intro to computer Science.Computer Science is the study of computers and computational systems. Unlike electrical and computer engineers, computer scientists deal mostly with software and software systems</p>
+          <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
+          <p> <%= course.description %></p>
         </div>
         <div class="card-action">
           <a href="#">Enroll</a>
@@ -17,17 +18,6 @@
         </div>
       </div>
     </div>
-    <div class="col s6 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">CS12: Intro to Computer Science.</span>
-          <p> An untermediate look at computer Science.Computer Science is the study of computers and computational systems. Unlike electrical and computer engineers, computer scientists deal mostly with software and software systems</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Enroll</a>
-          <a href="#">Info</a>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 
