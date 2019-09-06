@@ -1,3 +1,14 @@
+<% if @student.errors.any? %>
+  <%= pluralize(@student.errors.count, "error") %>
+  prohibated your profile from being ceated
+  <ul>
+    <% @student.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+
 <div class="container">
   <div class="row center sign-up-form">
     <div class="col s12 m12 l12">
@@ -6,21 +17,20 @@
         <div class="row">
           <%= form_for(@student, html: {class: "col s12"}) do |f| %>
           <div class="row">
-            <div class="input-fieldcol s12">
+            <div class="input-field col s12">
              <%= f.text_field :name, placeholder: "Enter your full name", autifocus: true %>
              <%= f.label :name %>
            </div>
          </div>
-
-         <div class="row">
-          <div class="input-fieldcol s12">
+      <div class="row">
+          <div class="input-field col s12">
            <%= f.email_field :email, placeholder: "Enter your email address" %>
            <%= f.label :email %>
          </div>
        </div>
         <div class="row">
           <div class="input-fieldcol s12">
-       <%= f.submit "Submit", class: "btn orange waves-effect waves-light right" %>
+       <%= f.submit "SIGN UP", class: "btn orange waves-effect waves-light right" %>
      </div>
    </div>
        <% end %>
